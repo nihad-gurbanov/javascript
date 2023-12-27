@@ -1,0 +1,1 @@
+JavaScript strings tasks
