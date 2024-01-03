@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trenary Coin-flip Game</title>
+  </head>
+  <body>
+    <button onclick="
+      playGame('heads');">
+      heads
+    </button>
+    <button onclick="
+      playGame('tails');">
+      tails
+    </button>
+
+    <!-- <button
+    onclick="
+    reset();
+    ">Reset</button> -->
+
+    <script>
+      let score = JSON.parse(localStorage.getItem('score')) || 
+      {
+        wins: 0,
+        losses: 0
+      };
+      function playGame(guess) {
+        let randomNumber = Math.random();
+        let result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+        if (guess === result) {
+          console.log('You win!');
+          score.wins += 1;
+        }
+        else {
+          console.log('You lose!');
+          score.losses += 1;
+        }
+        console.log(score);
+        localStorage.setItem('score', JSON.stringify(score));
+      }
+      // function reset () {
+      //   localStorage.removeItem('score')
+      //   score.wins = 0;
+      //   score.losses = 0
+      // }
+    </script>
+  </body>
+</html>
