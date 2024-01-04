@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Head Tails</title>
+  </head>
+  <body>
+    <button onclick="pressButton('heads');">heads</button>
+    <button onclick="pressButton('tails');">tails</button>
+
+    <p class="js-result"></p>
+    <script>
+      function pressButton(buttonClass) {
+        text = document.querySelector('.js-result');
+        if (buttonClass === 'heads') {
+          text.innerHTML = 'You chose: heads';
+        } else {
+          text.innerHTML = 'You chose: tails';
+        }
+      };
+    </script>
+  </body>
+</html>

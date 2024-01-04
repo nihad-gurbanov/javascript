@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update and Manage Cart</title>
+  </head>
+  <body>
+    <button 
+    onclick="manageCart('show')">
+    Show Quantity
+    </button>
+
+    <button 
+    onclick="updateCartQuantity(1);">
+    Add to Cart
+    </button>
+
+    <button
+    onclick="updateCartQuantity(2);">
+      +2
+    </button>
+
+    <button
+    onclick="updateCartQuantity(3);">
+      +3
+    </button>
+
+    <button 
+    onclick="updateCartQuantity(4);">
+      +4
+    </button>
+
+    <button 
+    onclick="updateCartQuantity(5);">
+      +5
+    </button>
+
+    <button
+    onclick="updateCartQuantity(-1);">
+      Remove from cart
+    </button>
+
+    <button
+    onclick="updateCartQuantity(-2);">
+      -2
+    </button>
+
+    <button
+    onclick="updateCartQuantity(-3);">
+      -3
+    </button>
+
+    <button
+    onclick="manageCart('reset')">
+      Reset Cart
+    </button>
+
+    <p class="js-quantity"></p>
+
+    <script>
+      let cartQuantity = 0;
+      displayCartQuantity();
+
+      function updateCartQuantity(quantity) {
+        if (cartQuantity + quantity < 0) {
+          alert('Not enough items in the cart');
+          return;
+        }
+        if (cartQuantity + quantity > 10) {
+          alert('The cart is full');
+          return;
+        }
+        
+        cartQuantity += quantity;
+        // console.log(cartQuantity);
+        displayCartQuantity();
+      }
+
+      function manageCart(action) {
+        if (action == 'reset') {
+          cartQuantity = 0;
+          // console.log('Cart was reset')
+          // console.log(`Cart quantity: ${cartQuantity}`);
+          displayCartQuantity();
+        }
+        else if (action == 'show') {
+          // console.log(`Cart quantity: ${cartQuantity}`);
+          displayCartQuantity();
+        }
+      }
+
+      function displayCartQuantity() {
+        document.querySelector('.js-quantity').innerHTML  = `Cart quantity: ${cartQuantity}`;
+      }
+    </script>
+  </body>
+</html>
