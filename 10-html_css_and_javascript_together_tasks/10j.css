@@ -1,0 +1,37 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial;
+}
+p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.calculation-result {
+  font-size: 36px;
+  width: 195px;
+  height: 46px;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.common-buttons,
+.operation-buttons,
+.clear-button {
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 20px;
+}
+.common-buttons {
+  background-color: rgb(52, 52, 52);
+}
+.operation-buttons {
+  background-color: orange;
+}
+.clear-button {
+  background-color: rgb(52, 52, 52);
+  font-size: 12px;
+}

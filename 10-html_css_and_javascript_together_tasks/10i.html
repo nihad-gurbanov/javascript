@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator + Function</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial;
+      }
+      p {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+      .calculation-result {
+        font-size: 36px;
+        width: 195px;
+        height: 46px;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 5px 10px;
+      }
+      .common-buttons,
+      .operation-buttons,
+      .clear-button {
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 25px;
+        color: white;
+        font-size: 20px;
+      }
+      .common-buttons {
+        background-color: rgb(52, 52, 52);
+      }
+      .operation-buttons {
+        background-color: orange;
+      }
+      .clear-button {
+        background-color: rgb(52, 52, 52);
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+<p class="calculation-result"></p>
+<!-- first line -->
+    <p>
+      <button class="common-buttons"
+      onclick="calculate('1');"
+      >1</button>
+      <button class="common-buttons"
+      onclick="calculate('2');"
+      >2</button>
+      <button class="common-buttons"
+      onclick="calculate('3');"
+      >3</button>
+      <button class="operation-buttons"
+      onclick="calculate(' + ');"
+      >+</button>
+    </p>
+
+<!-- second line -->
+    <p>
+      <button class="common-buttons"
+      onclick="calculate('4');"
+      >4</button>
+      <button class="common-buttons"
+      onclick="calculate('5');"
+      >5</button>
+      <button class="common-buttons"
+      onclick="calculate('6');"
+      >6</button>
+      <button class="operation-buttons"
+      onclick="calculate(' - ');"
+      >-</button>
+    </p>
+
+  <!-- third line -->
+    <p>
+      <button class="common-buttons"
+      onclick="calculate('7');"
+      >7</button>
+      <button class="common-buttons"
+      onclick="calculate('8');"
+      >8</button>
+      <button class="common-buttons"
+      onclick="calculate('9');"
+      >9</button>
+      <button class="operation-buttons"
+      onclick="calculate(' * ');"
+      >*</button>
+    </p>
+
+  <!-- fourth line -->
+    <p>
+      <button class="common-buttons"
+      onclick="calculate('0');"
+      >0</button>
+      <button class="common-buttons"
+      onclick="calculate('.');"
+      >.</button>
+      <button class="common-buttons"
+      onclick="calculate('=');"
+      >=</button>
+      <button class="operation-buttons"
+      onclick="calculate(' / ');"
+      >/</button>
+    </p>
+<!-- fifth line -->
+    <p>
+      <button class="clear-button"
+      onclick="calculate('Clear');">
+        Clear
+      </button>
+    </p>
+    <script>
+      let calculation = localStorage.getItem('calculation') || '';
+      displayCalculation();
+
+      function calculate(keyPress) {
+        if (keyPress === '=') {
+          calculation = eval(calculation);
+          displayCalculation();
+          localStorage.setItem('calculation', calculation)
+        }
+        else if (keyPress === 'Clear') {
+          calculation = '';
+          // console.log('Cleared');
+          displayCalculation();
+          localStorage.setItem('calculation', calculation)
+        }
+        else {
+          calculation += keyPress;
+          localStorage.setItem('calculation', calculation)
+        }
+        console.log(calculation);
+        displayCalculation();
+      }
+
+      function displayCalculation() {
+        document.querySelector('.calculation-result').innerHTML = calculation;
+      }
+    </script>
+  </body>
+</html>

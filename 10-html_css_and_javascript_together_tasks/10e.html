@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toggling Buttons</title>
+    <link rel="stylesheet" href="10e.css">
+  </head>
+  <body>
+    <button class="menu-button gaming"
+    onclick="toggle('gaming');">Gaming</button>
+
+    <button class="menu-button music"
+    onclick="toggle('music');">Music</button>
+
+    <button class="menu-button tech"
+    onclick="toggle('tech');">Tech</button>
+
+    <script>
+      function toggle(button) {
+        buttonElement = document.querySelector(`.${button}`);
+        if (!buttonElement.classList.contains('is-toggled')) {
+          buttonElement.classList.add('is-toggled');
+        }
+        else {
+          buttonElement.classList.remove('is-toggled');
+        }
+      }
+    </script>
+  </body>
+</html>
