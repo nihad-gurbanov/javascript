@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Min Max Function</title>
+  </head>
+  <body>
+    <script>
+      function minMax (nums) {
+        let minMaxObject = {
+          min: nums[0],
+          max: nums[0]
+        };
+
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+
+          if (value < minMaxObject.min) {
+            minMaxObject.min = value;
+          }
+          if (value > minMaxObject.max) {
+            minMaxObject.max = value;
+          }
+        }
+
+        return minMaxObject;
+      }
+
+      console.log(minMax([-100, 3, -33, 8, 26, -44]));
+    </script>
+  </body>
+</html>

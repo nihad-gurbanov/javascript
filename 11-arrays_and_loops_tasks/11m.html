@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Min Max Function</title>
+  </head>
+  <body>
+    <script>
+      function minMax (nums) {
+        let minMaxObject = {
+          min: null,
+          max: null
+        };
+
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+
+          if (minMaxObject.min === null || value < minMaxObject.min) {
+            minMaxObject.min = value;
+          }
+          if (minMaxObject.max === null || value > minMaxObject.max) {
+            minMaxObject.max = value;
+          }
+        }
+
+        return minMaxObject;
+      }
+
+      console.log(minMax([1, -3, 5]));
+      console.log(minMax([-2, 3, -5, 7, 10]));
+
+      console.log(minMax([]));
+      console.log(minMax([3]));
+
+    </script>
+  </body>
+</html>

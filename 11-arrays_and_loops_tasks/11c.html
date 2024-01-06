@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array Swap</title>
+  </head>
+  <body>
+    <script>
+      function arraySwap (array) {
+        let firstValue = array[0];
+        let lastValue = array[array.length - 1];
+
+        array[0] = lastValue;
+        array[array.length - 1] = firstValue;        
+
+        return array;
+      }
+
+      console.log(arraySwap([1, 3, 5, 7]));
+    </script>
+  </body>
+</html>
