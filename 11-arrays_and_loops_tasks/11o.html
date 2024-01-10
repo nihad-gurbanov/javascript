@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array of Strings</title>
+  </head>
+  <body>
+    <script>
+      let strArray = ['hello', 'world', 'search', 'good', 'search'];
+      let index = -1;
+      // strArray = ['not', 'found']
+
+      for (let i = 0; i < strArray.length; i++) {
+        if (strArray[i] === 'search') {
+          index = i;
+        }
+      }
+      console.log(index);
+    </script>
+  </body>
+</html>

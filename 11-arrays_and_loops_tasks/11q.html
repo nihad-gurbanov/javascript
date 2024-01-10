@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find Index of an Array element</title>
+  </head>
+  <body>
+    <script>
+      function findIndex(array, word) {
+        let index = -1;
+
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          index = i;
+          break;
+        }
+      }
+      console.log(index);
+      }
+
+      findIndex(['hello', 'world', 'search', 'good', 'search'], 'search');
+      findIndex(['not', 'found'], 'search');
+
+    </script>
+  </body>
+</html>

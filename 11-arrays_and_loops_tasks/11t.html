@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Remove Item Reversly from Array</title>
+  </head>
+  <body>
+    <script>
+      function removeEgg (foods) {
+        let eggsRemoved = 0;
+        let reversedFoods = foods.reverse();
+        let result = []
+
+        for (let i = 0; i < reversedFoods.length; i++) {
+          if (reversedFoods[i] !== 'egg' || eggsRemoved >= 2) {
+            result.push(reversedFoods[i]);
+          }
+          else {
+            eggsRemoved++;
+          }
+        }
+
+        return result.reverse();
+      }
+
+      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    </script>
+  </body>
+</html>
