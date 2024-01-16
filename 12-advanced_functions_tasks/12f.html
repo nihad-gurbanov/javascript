@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add to cart Fix</title>
+  </head>
+  <body>
+    <button class="js-add-to-cart" onclick="
+      addToBasket();
+      ">Add to cart</button>
+      <p class="js-added"></p>
+
+      <script>
+        let timeoutId;
+        function addToBasket() {
+          var status = document.querySelector('.js-added');
+          status.innerHTML = 'Added'
+          
+          clearTimeout(timeoutId);
+
+          timeoutId = setTimeout(function() {
+            status.innerHTML = '';
+          }, 2000);
+
+        };
+      </script>
+  </body>
+</html>
